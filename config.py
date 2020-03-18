@@ -18,7 +18,7 @@ def create_api():
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
     try:
         api.verify_credentials()
-    except Exception as e:
+    except Exception:
         logger.exception('Error Creating Api')
 
     now = datetime.now()
