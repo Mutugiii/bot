@@ -46,7 +46,7 @@ def main():
     api = create_api()
     tweets_stream_listener = favRetweetListener(api)
     stream = tweepy.Stream(api.auth, tweets_stream_listener)
-    stream.filter(track=['#ikokazike', '#ikokazikenya','ikokazi'])
+    stream.filter(track=['#ikokazike', '#ikokazikenya','#ikokazi'])
 
 if __name__ == '__main__':
     main()
