@@ -3,7 +3,7 @@ import logging
 from decouple import config
 from datetime import datetime
 
-logging.basicConfig(level=logging.INFO, filename='logs/startlogs.log', filemode='a', format='%(name)s - %(levelname)s - %(message)s)
+logging.basicConfig(level=logging.INFO, filename='logs/logs.log', filemode='a', format='%(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
 def create_api():
