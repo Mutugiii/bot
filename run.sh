@@ -1,1 +1,1 @@
-python3 follow.py && python3 hashtags.py
+python3 hashtags.py
