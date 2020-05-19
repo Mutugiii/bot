@@ -1,1 +1,1 @@
-worker: python hashtags.py
+worker: python3 hashtags.py
