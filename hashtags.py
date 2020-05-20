@@ -31,7 +31,7 @@ class favRetweetListener(tweepy.StreamListener):
         if not tweet.retweeted:
             try:
                 tweet.retweet()
-                csv_writer.writerow([f'{tweet.id}',f'{tweet.user.name}', f'twitter.com/{tweet.user.screen_name}/status/{tweet.id}', f'{tweet.user.created_at}'])
+                csv_writer.writerow([f'{tweet.id}',f'{tweet.user.name}', f'twitter.com/{tweet.user.screen_name}/status/{tweet.id}', f'{tweet.created_at}', f'tweet.status.text'])
             except Exception:
                 logger.exception(f'Error while Retweeting tweet of id {tweet.id}')
 
@@ -46,7 +46,7 @@ def main():
     api = create_api()
     tweets_stream_listener = favRetweetListener(api)
     stream = tweepy.Stream(api.auth, tweets_stream_listener)
-    stream.filter(track=['#ikokazike', '#ikokazikenya','#ikokazi', '#IkoKazi', '#IkoKaziKE', '#IkoKaziKe', '#IkoKaziKenya'])
+    stream.filter(track=['#ikokazike', '#ikokazikenya', '#IkoKaziKE', '#IkoKaziKe', '#IkoKaziKenya'], is_async=True)
 
 if __name__ == '__main__':
     main()
